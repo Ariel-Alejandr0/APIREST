@@ -18,9 +18,9 @@ router.put('/produtos/:id', ProdutoController.updateProduto);
 router.delete('/produtos/:id', ProdutoController.deleteProduto);
 
 // Rota para registrar entrada de estoque
-router.post('/produtos/:id/entrada', ProdutoController.registrarEntrada);
+//router.post('/produtos/:id/entrada', ProdutoController.registrarEntrada);
 
 // Rota para registrar saída de estoque
-router.post('/produtos/:id/saida', ProdutoController.registrarSaida);
+//router.post('/produtos/:id/saida', ProdutoController.registrarSaida);
 
 module.exports = router;
