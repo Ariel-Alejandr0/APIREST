@@ -14,9 +14,10 @@ app.use(express.json());
 
 // Importar rotas
 const produtosRoutes = require('./routes/ProdutosRoutes');
-
+const entradasRoutes = require('./routes/Entrada_EstoqueRoutes');
 // Usar rotas
 app.use('/api', produtosRoutes);
+app.use('/api', entradasRoutes);
 
 // Iniciar o servidor
 const PORT = process.env.PORT || 3000;
