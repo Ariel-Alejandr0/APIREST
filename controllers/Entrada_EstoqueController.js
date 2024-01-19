@@ -1,6 +1,5 @@
 const Entrada_Estoque = require('../models/Entrada_Estoque');
 
-
 const EntradasController = {
     createEntrada: async (req, res) => { // função assincrona que requista body e responde
         try {
@@ -12,9 +11,20 @@ const EntradasController = {
     },
     getAllEntradas: async (req, res) => {
         try {
-            const getEntrada = await Entrada_Estoque.findAll(req.body);
-            res.json(getEntrada);
+            const getEntradas = await Entrada_Estoque.findAll(req.body);
+            res.json(getEntradas);
         } catch (error) {
+            res.status(500).send(error.message);
+        }
+    },
+    getEntradaByID: async (req, res) => {
+        try {
+            const getEntrada = await Entrada_Estoque.findByPk(req.params.id);
+            if (!getEntrada) {
+                return res.status(404).send('Entrada não encontrado');
+            }
+            res.json(getEntrada)
+        } catch(error) {
             res.status(500).send(error.message);
         }
     }
