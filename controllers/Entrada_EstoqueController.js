@@ -9,7 +9,16 @@ const EntradasController = {
         } catch (error) {
             res.status(500).send(error.message);//caso haja algum erro ele envia a mensagem de erro com status 500
         }  
+    },
+    getAllEntradas: async (req, res) => {
+        try {
+            const getEntrada = await Entrada_Estoque.findAll(req.body);
+            res.json(getEntrada);
+        } catch (error) {
+            res.status(500).send(error.message);
+        }
     }
+    
 }
 
 module.exports = EntradasController;
