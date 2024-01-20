@@ -279,6 +279,144 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Saidas",
+			"item": [
+				{
+					"name": "Criar saída",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_produto\": 3,\n    \"quantidade\": 2,\n    \"data_saida\": \"2023-12-5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/saida_estoque",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saida_estoque"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter saídas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/saida_estoque",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saida_estoque"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter saída por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/saida_estoque/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saida_estoque",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter saída do ID do Produto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/saida_estoque/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saida_estoque",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar saída",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/saida_estoque/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saida_estoque",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar saída",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/saida_estoque/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"saida_estoque",
+								"22"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
