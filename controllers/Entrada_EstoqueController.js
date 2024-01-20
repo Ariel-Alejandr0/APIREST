@@ -12,19 +12,19 @@ const EntradasController = {
     },
     getAllEntradas: async (req, res) => { //retorna todas as entradas de estoque
         try {
-            const Entradas = await Entrada_Estoque.findAll(req.body);
-            res.json(Entradas);
+            const entradas = await Entrada_Estoque.findAll(req.body);
+            res.json(entradas);
         } catch (error) {
             res.status(500).send(error.message);
         }
     },
     getEntradaByID: async (req, res) => { //retorna uma entrada específica
         try {
-            const Entrada = await Entrada_Estoque.findByPk(req.params.id);
-            if (!Entrada) {
+            const entrada = await Entrada_Estoque.findByPk(req.params.id);
+            if (!entrada) {
                 return res.status(404).send('Entrada não encontrada');
             }
-            res.json(Entrada)
+            res.json(entrada)
         } catch(error) {
             res.status(500).send(error.message);
         }

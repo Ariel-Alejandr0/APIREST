@@ -9,7 +9,27 @@ const SaidaController = {
         } catch(error) {
             res.status(500).send(error.message);
         }
-    }
+    },
+    getSaidas: async (req, res) => {
+        try {
+            const saidas = await Saida_Estoque.findAll();
+            res.json(saidas);
+        } catch(error) {
+            res.status(500).send(error.message);
+        } 
+    },
+    getSaidaByID: async (req, res) => {
+        try {
+            const saida = await Saida_Estoque.findByPk(req.params.id);
+            if(!saida) {
+                return req.status(404).send("Saída não encontrada!");
+            }
+            res.json(saida);
+        } catch(error) {
+            res.status(500).send(error.message)
+        }
+    },
+
 }
 
 module.exports = SaidaController;

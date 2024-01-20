@@ -15,7 +15,7 @@ app.use(express.json());
 // Importar rotas
 const produtosRoutes = require('./routes/ProdutosRoutes');
 const entradasRoutes = require('./routes/Entrada_EstoqueRoutes');
-const saidaRoutes    = require('./routes/Saida_EstoqueRoutes')
+const saidaRoutes    = require('./routes/Saida_EstoqueRoutes');
 
 // Usar rotas
 app.use('/api', produtosRoutes);
