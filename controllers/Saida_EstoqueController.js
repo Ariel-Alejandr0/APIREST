@@ -44,6 +44,34 @@ const SaidaController = {
         } catch(error) {
             res.status(500).send(error.message);
         }
+    },
+    updateSaida: async (req, res) => {
+        try {
+            const saida = await Saida_Estoque.findByPk(req.params.id);
+
+            if(!saida){
+                return res.status(404).send("Saída não encontrada!");
+            }
+            await saida.update(req.body)
+            res.send("Saída atualizada com sucesso!");
+
+        } catch(error) {
+            res.status(500).send(error.message)
+        }
+    },
+    deleteSaida: async (req, res) => {
+        try {
+            const saida = await Saida_Estoque.findByPk(req.params.id);
+
+            if(!saida){
+                res.status(404).send("Saída não encontrada");
+            }
+            await saida.destroy()
+            res.send("Saída excluída com sucesso!")
+
+        } catch(error){
+            res.status(500).send(error.message);
+        }
     }
 
 }

@@ -14,4 +14,10 @@ router.get('/saida_estoque/:id', SaidaController.getSaidaByID);
 //Rota para obter as saídas de um determinado produto
 router.get('/saida_estoque/saida_produto/:id_p', SaidaController.getSaidaByProdutoID);
 
+//Rota para atualizar uma saida
+router.put('/saida_estoque/:id', SaidaController.updateSaida);
+
+//Rota para excluir uma saída
+router.delete('/saida_estoque/:id', SaidaController.deleteSaida)
+
 module.exports = router;
