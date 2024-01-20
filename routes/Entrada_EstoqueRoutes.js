@@ -14,6 +14,12 @@ router.get('/entrada_estoque/:id', EntradasController.getEntradaByID)
 //Rota para obter todas as entradas de um produto específico por FK
 router.get('/entrada_estoque/entrada_produto/:id_p', EntradasController.getEntradaByProdutoID)
 
+//Rota para atualizar uma entrada
+router.put('/entrada_estoque/:id', EntradasController.updateEntrada)
+
+//Rota para deletar uma entrada
+router.delete('/entrada_estoque/:id', EntradasController.deleteEntrada)
+
 module.exports = router;
 
 

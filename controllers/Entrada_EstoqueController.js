@@ -4,40 +4,65 @@ const Entrada_Estoque = require('../models/Entrada_Estoque');
 const EntradasController = {
     createEntrada: async (req, res) => { // função assincrona que requista body e responde
         try {
-            const novaEntrada = await Entrada_Estoque.create(req.body); //pausa a função até que request de body seja feito
-            res.json(novaEntrada); //responde a nova entrada em formato JSON
+            const novaEntrada = await Entrada_Estoque.create(req.body);
+            res.json(novaEntrada); 
         } catch (error) {
-            res.status(500).send(error.message);//caso haja algum erro ele envia a mensagem de erro com status 500
+            res.status(500).send(error.message);
         }  
     },
-    getAllEntradas: async (req, res) => {
+    getAllEntradas: async (req, res) => { //retorna todas as entradas de estoque
         try {
-            const getEntradas = await Entrada_Estoque.findAll(req.body);
-            res.json(getEntradas);
+            const Entradas = await Entrada_Estoque.findAll(req.body);
+            res.json(Entradas);
         } catch (error) {
             res.status(500).send(error.message);
         }
     },
-    getEntradaByID: async (req, res) => {
+    getEntradaByID: async (req, res) => { //retorna uma entrada específica
         try {
-            const getEntrada = await Entrada_Estoque.findByPk(req.params.id);
-            if (!getEntrada) {
-                return res.status(404).send('Entrada não encontrado');
+            const Entrada = await Entrada_Estoque.findByPk(req.params.id);
+            if (!Entrada) {
+                return res.status(404).send('Entrada não encontrada');
             }
-            res.json(getEntrada)
+            res.json(Entrada)
         } catch(error) {
             res.status(500).send(error.message);
         }
     },
-    getEntradaByProdutoID: async (req, res) => {
+    getEntradaByProdutoID: async (req, res) => { //retorna todas as entradas de um produto
         try {
-            const getEntradasProduto = await Entrada_Estoque.sequelize
+            const EntradasProduto = await Entrada_Estoque.sequelize
                 .query(`SELECT * FROM Entrada_Estoques WHERE id_produto = ${req.params.id_p}`);
             
-            if (!getEntradasProduto) {
-                return res.status(404).send('Entrada não encontrado');
+            if (!EntradasProduto) {
+                return res.status(404).send('Entrada não encontrada');
             }    
-            res.json(getEntradasProduto)
+            res.json(EntradasProduto)
+        } catch (error) {
+            res.status(500).send(error.message);
+        }
+    },
+    updateEntrada: async (req, res) => {
+        try {
+            const entrada = await Entrada_Estoque.findByPk(req.params.id);
+            if (!entrada) {
+                return res.status(404).send('Entrada não encontrada')
+            }
+            await entrada.update(req.body)
+            res.send("Entrada atualizada com Sucesso!");
+        } catch(error) {
+            res.status(500).send(error.message);
+        }
+    },
+    deleteEntrada: async (req, res) => {
+        try {
+            const entrada = await Entrada_Estoque.findByPk(req.params.id);
+            if (!entrada) {
+                return res.status(404).send('Entrada não encontrada')
+            }
+            await entrada.destroy()
+            res.send("Entrada deletado com Sucesso!")
+            
         } catch (error) {
             res.status(500).send(error.message);
         }

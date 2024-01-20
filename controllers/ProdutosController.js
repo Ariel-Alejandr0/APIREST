@@ -57,7 +57,6 @@ const ProdutoController = {
             res.status(500).send(error.message);
         }
     },
-
     // Implementação das funções de controle de estoque
     // registrarEntrada e registrarSaida
     // ... (a ser implementado)
