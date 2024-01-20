@@ -211,7 +211,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/entrada_estoque/entrada_produto/10",
+							"raw": "http://localhost:3000/api/entrada_estoque/entrada_produto/21",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -221,7 +221,7 @@
 								"api",
 								"entrada_estoque",
 								"entrada_produto",
-								"10"
+								"21"
 							]
 						}
 					},
@@ -234,7 +234,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"quantidade\": 40\n}",
+							"raw": "{\n    \"quantidade\": 20\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -359,7 +359,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/saida_estoque/7",
+							"raw": "http://localhost:3000/api/saida_estoque/saida_produto/10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -368,7 +368,8 @@
 							"path": [
 								"api",
 								"saida_estoque",
-								"7"
+								"saida_produto",
+								"10"
 							]
 						}
 					},
@@ -379,8 +380,17 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quantidade\": 92\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3000/api/saida_estoque/7",
+							"raw": "http://localhost:3000/api/saida_estoque/15",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -389,7 +399,7 @@
 							"path": [
 								"api",
 								"saida_estoque",
-								"7"
+								"15"
 							]
 						}
 					},
