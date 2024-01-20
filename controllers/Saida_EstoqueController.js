@@ -29,6 +29,22 @@ const SaidaController = {
             res.status(500).send(error.message)
         }
     },
+    getSaidaByProdutoID: async (req, res) => {
+        try {
+            const saida = await Saida_Estoque.findAll({
+                where: {
+                    id_produto: req.params.id_p
+                }
+            });
+
+            if (saida.length <= 0){
+                return res.status(404).send("Entrada(s) não encontrada(s)!");
+            }
+            res.json(saida);
+        } catch(error) {
+            res.status(500).send(error.message);
+        }
+    }
 
 }
 
