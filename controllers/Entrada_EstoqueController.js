@@ -1,5 +1,6 @@
 const Entrada_Estoque = require('../models/Entrada_Estoque');
 
+
 const EntradasController = {
     createEntrada: async (req, res) => { // função assincrona que requista body e responde
         try {
@@ -25,6 +26,19 @@ const EntradasController = {
             }
             res.json(getEntrada)
         } catch(error) {
+            res.status(500).send(error.message);
+        }
+    },
+    getEntradaByProdutoID: async (req, res) => {
+        try {
+            const getEntradasProduto = await Entrada_Estoque.sequelize
+                .query(`SELECT * FROM Entrada_Estoques WHERE id_produto = ${req.params.id_p}`);
+            
+            if (!getEntradasProduto) {
+                return res.status(404).send('Entrada não encontrado');
+            }    
+            res.json(getEntradasProduto)
+        } catch (error) {
             res.status(500).send(error.message);
         }
     }
