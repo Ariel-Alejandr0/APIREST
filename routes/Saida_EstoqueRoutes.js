@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const ProdutoController = require('../controllers/Saida_EstoqueController');
+const SaidaController = require('../controllers/Saida_EstoqueController');
 
-// Rota para criar um novo produto
-router.post('/Saida_Estoque', ProdutoController.createProduto);
+// Rota para criar uma nova saída de estoque
+router.post('/saida_Estoque', SaidaController.createSaida);
 
 module.exports = router;
