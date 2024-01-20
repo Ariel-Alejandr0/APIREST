@@ -31,13 +31,15 @@ const EntradasController = {
     },
     getEntradaByProdutoID: async (req, res) => { //retorna todas as entradas de um produto
         try {
-            const EntradasProduto = await Entrada_Estoque.sequelize
-                .query(`SELECT * FROM Entrada_Estoques WHERE id_produto = ${req.params.id_p}`);
-            
-            if (!EntradasProduto) {
-                return res.status(404).send('Entrada não encontrada');
+            const entradasProduto = await Entrada_Estoque.findAll({
+                where: {
+                    id_produto: req.params.id_p 
+                }
+            })
+            if (entradasProduto.length === 0) { //verifica se o produto possui alguma entrada
+                return res.status(404).send('Entrada(s) do produto não encontrada(s)');
             }    
-            res.json(EntradasProduto)
+            res.json(entradasProduto)
         } catch (error) {
             res.status(500).send(error.message);
         }
@@ -62,7 +64,7 @@ const EntradasController = {
             }
             await entrada.destroy()
             res.send("Entrada deletado com Sucesso!")
-            
+
         } catch (error) {
             res.status(500).send(error.message);
         }
