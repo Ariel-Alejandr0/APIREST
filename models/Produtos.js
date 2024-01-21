@@ -18,6 +18,9 @@ Produtos.init({
     },
     preco_unitario: {
         type: DataTypes.DECIMAL
+    },
+    estoque_minimo: {
+        type: DataTypes.INTEGER
     }
 }, {
     sequelize,

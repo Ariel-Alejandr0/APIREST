@@ -10,7 +10,7 @@ const SaidaController = {
             res.status(500).send(error.message);
         }
     },
-    getSaidas: async (req, res) => {
+    getSaidas: async (req, res) => { // obtem todas as saídas
         try {
             const saidas = await Saida_Estoque.findAll();
             res.json(saidas);
@@ -18,7 +18,7 @@ const SaidaController = {
             res.status(500).send(error.message);
         } 
     },
-    getSaidaByID: async (req, res) => {
+    getSaidaByID: async (req, res) => { // obtem uma saida específica por id
         try {
             const saida = await Saida_Estoque.findByPk(req.params.id);
             if(!saida) {
@@ -29,7 +29,7 @@ const SaidaController = {
             res.status(500).send(error.message)
         }
     },
-    getSaidaByProdutoID: async (req, res) => {
+    getSaidaByProdutoID: async (req, res) => { // Obtem todas as saídas de um produto
         try {
             const saida = await Saida_Estoque.findAll({
                 where: {
@@ -45,7 +45,7 @@ const SaidaController = {
             res.status(500).send(error.message);
         }
     },
-    updateSaida: async (req, res) => {
+    updateSaida: async (req, res) => { //atualiza uma saída de um id específico
         try {
             const saida = await Saida_Estoque.findByPk(req.params.id);
 
@@ -59,7 +59,7 @@ const SaidaController = {
             res.status(500).send(error.message)
         }
     },
-    deleteSaida: async (req, res) => {
+    deleteSaida: async (req, res) => { // deleta uma saída por id específico
         try {
             const saida = await Saida_Estoque.findByPk(req.params.id);
 

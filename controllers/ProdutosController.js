@@ -1,4 +1,21 @@
 const Produto = require('../models/Produtos');
+const Entrada_Estoque = require('../models/Entrada_Estoque');
+const Saida_Estoque = require('../models/Saida_Estoque');
+
+const deleteAllSaidas = async (id_produto) => { //evita que existam resgistros orfãos nas Saídas
+    return await Saida_Estoque.destroy({
+        where: {
+            id_produto: id_produto
+        }
+    })
+}
+const deleteAllEntradas = async (id_produto) => { //evita que existam resgistros orfãos nas Entrdas
+    return await Entrada_Estoque.destroy({
+        where: {
+            id_produto: id_produto
+        }
+    });
+}
 
 
 const ProdutoController = {
@@ -47,19 +64,20 @@ const ProdutoController = {
 
     deleteProduto: async (req, res) => {
         try {
-            const produto = await Produto.findByPk(req.params.id);
+            const id_produto= req.params.id;
+            const produto = await Produto.findByPk(id_produto);
+            
             if (!produto) {
                 return res.status(404).send('Produto não encontrado');
             }
+            deleteAllSaidas(id_produto);
+            deleteAllEntradas(id_produto);
             await produto.destroy();
             res.send('Produto deletado com sucesso');
         } catch (error) {
             res.status(500).send(error.message);
         }
-    },
-    // Implementação das funções de controle de estoque
-    // registrarEntrada e registrarSaida
-    // ... (a ser implementado)
+    }
 };
 
 module.exports = ProdutoController;
