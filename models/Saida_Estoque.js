@@ -28,8 +28,9 @@ Saida_Estoque.init({
     }
 }, {
     sequelize,
-    modelName: 'Saida_Estoque',
-    timestamps: false
+    modelName: 'Saidas_Estoque',
+    timestamps: false,
+    freezeTableName: true
 });
 
 module.exports = Saida_Estoque;

@@ -29,8 +29,8 @@ Produtos.init({
     }
 }, {
     sequelize,
-    modelName: 'Produtos',
-    timestamps: false
+    modelName: 'Produtos',  
+    timestamps: false,
 });
 
 module.exports = Produtos;

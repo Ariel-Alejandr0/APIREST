@@ -28,8 +28,9 @@ Entrada_Estoque.init({
     }
 }, {
     sequelize,
-    modelName: 'Entrada_Estoque',
-    timestamps: false
+    modelName: 'Entradas_Estoque',
+    timestamps: false,
+    freezeTableName: true
 });
 
 module.exports = Entrada_Estoque;
