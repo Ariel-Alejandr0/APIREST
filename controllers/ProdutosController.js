@@ -70,8 +70,8 @@ const ProdutoController = {
             if (!produto) {
                 return res.status(404).send('Produto não encontrado');
             }
-            deleteAllSaidas(id_produto);
-            deleteAllEntradas(id_produto);
+            await deleteAllSaidas(id_produto);
+            await deleteAllEntradas(id_produto);
             await produto.destroy();
             res.send('Produto deletado com sucesso');
         } catch (error) {
