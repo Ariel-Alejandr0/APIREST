@@ -2,14 +2,14 @@ const Produto = require('../models/Produtos');
 const Entrada_Estoque = require('../models/Entrada_Estoque');
 const Saida_Estoque = require('../models/Saida_Estoque');
 
-const deleteAllSaidas = async (id_produto) => { //evita que existam resgistros orfãos nas Saídas
+const deleteAllSaidas = async (id_produto) => { //função para evitar que existam resgistros orfãos nas Saídas
     return await Saida_Estoque.destroy({
         where: {
             id_produto: id_produto
         }
     })
 }
-const deleteAllEntradas = async (id_produto) => { //evita que existam resgistros orfãos nas Entrdas
+const deleteAllEntradas = async (id_produto) => { //função para evitar que existam resgistros orfãos nas Entrdas
     return await Entrada_Estoque.destroy({
         where: {
             id_produto: id_produto
@@ -19,7 +19,7 @@ const deleteAllEntradas = async (id_produto) => { //evita que existam resgistros
 
 
 const ProdutoController = {
-    createProduto: async (req, res) => {
+    createProduto: async (req, res) => { // Cria um produto
         try {
             const novoProduto = await Produto.create(req.body);
             res.json(novoProduto);
@@ -28,7 +28,7 @@ const ProdutoController = {
         }
     },
 
-    getAllProdutos: async (req, res) => {
+    getAllProdutos: async (req, res) => { // Obtem todos os produtos
         try {
             const produtos = await Produto.findAll();
             res.json(produtos);
@@ -37,7 +37,7 @@ const ProdutoController = {
         }
     },
 
-    getProdutoById: async (req, res) => {
+    getProdutoById: async (req, res) => { // obtem um produto por id
         try {
             const produto = await Produto.findByPk(req.params.id);
             if (!produto) {
@@ -49,7 +49,7 @@ const ProdutoController = {
         }
     },
 
-    updateProduto: async (req, res) => {
+    updateProduto: async (req, res) => { // Atualiza um produto
         try {
             const produto = await Produto.findByPk(req.params.id);
             if (!produto) {
@@ -62,7 +62,7 @@ const ProdutoController = {
         }
     },
 
-    deleteProduto: async (req, res) => {
+    deleteProduto: async (req, res) => { //Deleta um  produto
         try {
             const id_produto= req.params.id;
             const produto = await Produto.findByPk(id_produto);

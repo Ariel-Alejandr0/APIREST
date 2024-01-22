@@ -2,7 +2,7 @@ const Entrada_Estoque = require('../models/Entrada_Estoque');
 
 
 const EntradasController = {
-    createEntrada: async (req, res) => { // função assincrona que requista body e responde
+    createEntrada: async (req, res) => { //cria uma entrada
         try {
             const novaEntrada = await Entrada_Estoque.create(req.body);
             res.json(novaEntrada); 
@@ -44,9 +44,9 @@ const EntradasController = {
             res.status(500).send(error.message);
         }
     },
-    updateEntrada: async (req, res) => {
+    updateEntrada: async (req, res) => {// Atualiza uma entrada
         try {
-            const entrada = await Entrada_Estoque.findByPk(req.params.id);
+            const entrada = await Entrada_Estoque.findByPk(req.params.id); 
             if (!entrada) {
                 return res.status(404).send('Entrada não encontrada')
             }
@@ -56,7 +56,7 @@ const EntradasController = {
             res.status(500).send(error.message);
         }
     },
-    deleteEntrada: async (req, res) => {
+    deleteEntrada: async (req, res) => { // Deleta uma entrada
         try {
             const entrada = await Entrada_Estoque.findByPk(req.params.id);
             if (!entrada) {

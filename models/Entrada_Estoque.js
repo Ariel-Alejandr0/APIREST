@@ -30,7 +30,7 @@ Entrada_Estoque.init({
     sequelize,
     modelName: 'Entradas_Estoque',
     timestamps: false,
-    freezeTableName: true
+    freezeTableName: true //Impede a Tabela de ficar no plural
 });
 
 module.exports = Entrada_Estoque;

@@ -38,7 +38,7 @@ const SaidaController = {
             });
 
             if (saida.length <= 0){
-                return res.status(404).send("Entrada(s) não encontrada(s)!");
+                return res.status(404).send("Saídas(s) não encontrada(s)!");
             }
             res.json(saida);
         } catch(error) {

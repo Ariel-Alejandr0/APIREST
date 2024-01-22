@@ -30,7 +30,7 @@ Saida_Estoque.init({
     sequelize,
     modelName: 'Saidas_Estoque',
     timestamps: false,
-    freezeTableName: true
+    freezeTableName: true // impede o nome da tabela de ficar no plural
 });
 
 module.exports = Saida_Estoque;
