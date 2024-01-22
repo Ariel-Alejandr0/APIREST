@@ -1,11 +1,20 @@
+const Entrada_Estoque = require('../models/Entrada_Estoque');
 const Saida_Estoque = require('../models/Saida_Estoque');
-
+const { Op } = require('sequelize')
 
 const SaidaController = {
     createSaida: async (req, res) => { //criar uma saida de estoque
         try {
-            const novaSaida = await Saida_Estoque.create(req.body);
-            res.json(novaSaida);
+            const id_produto = req.body.id_produto
+            const saldoAtual = await SaidaController.calculaEstoque(id_produto) - req.body.quantidade
+            
+            if (saldoAtual >= 0){ // impede que a saida seja maior o que a quantiade no estoque
+                const novaSaida = await Saida_Estoque.create(req.body);
+                res.json(novaSaida);
+            } else {
+                res.send(`Não foi possível completar a operação, Saldo atual do produto: ${saldoAtual}`)
+            }
+            
         } catch(error) {
             res.status(500).send(error.message);
         }
@@ -72,8 +81,24 @@ const SaidaController = {
         } catch(error){
             res.status(500).send(error.message);
         }
+    },
+    calculaEstoque: async (id_produto) => { // veirifica o saldo atual do produto
+        const totalEntradas = await Entrada_Estoque.sum('quantidade', {
+            where: {
+                id_produto: {
+                    [Op.eq]: id_produto
+                }
+            }
+        });
+        const totalSaidas = await Saida_Estoque.sum('quantidade', {
+            where: {
+                id_produto: {
+                    [Op.eq]: id_produto
+                }
+            }
+        });
+        return totalEntradas - totalSaidas;
     }
-
 }
 
 module.exports = SaidaController;
