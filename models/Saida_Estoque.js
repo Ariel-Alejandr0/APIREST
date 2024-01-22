@@ -7,20 +7,24 @@ Saida_Estoque.init({
     id_saida: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
+        allowNull: false
     },
     id_produto: {
         type: DataTypes.INTEGER,
         references: {
             model: 'Produtos',
             key: 'id_produto'
-        }
+        },
+        allowNull: false
     },
     quantidade: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
     data_saida: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
+        allowNull: false
     }
 }, {
     sequelize,
