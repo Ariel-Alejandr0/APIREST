@@ -2,22 +2,6 @@ const Produto = require('../models/Produtos');
 const Entrada_Estoque = require('../models/Entrada_Estoque');
 const Saida_Estoque = require('../models/Saida_Estoque');
 
-const deleteAllSaidas = async (id_produto) => { //função para evitar que existam resgistros orfãos nas Saídas
-    return await Saida_Estoque.destroy({
-        where: {
-            id_produto: id_produto
-        }
-    })
-}
-const deleteAllEntradas = async (id_produto) => { //função para evitar que existam resgistros orfãos nas Entrdas
-    return await Entrada_Estoque.destroy({
-        where: {
-            id_produto: id_produto
-        }
-    });
-}
-
-
 const ProdutoController = {
     createProduto: async (req, res) => { // Cria um produto
         try {
@@ -70,13 +54,27 @@ const ProdutoController = {
             if (!produto) {
                 return res.status(404).send('Produto não encontrado');
             }
-            await deleteAllSaidas(id_produto);
-            await deleteAllEntradas(id_produto);
+            await ProdutoController.deleteAllSaidas(id_produto);
+            await ProdutoController.deleteAllEntradas(id_produto);
             await produto.destroy();
             res.send('Produto deletado com sucesso');
         } catch (error) {
             res.status(500).send(error.message);
         }
+    },
+    deleteAllSaidas: async (id_produto) => { //função para evitar que existam resgistros orfãos nas Saídas
+        return await Saida_Estoque.destroy({
+            where: {
+                id_produto: id_produto
+            }
+        })
+    },
+    deleteAllEntradas: async (id_produto) => { //função para evitar que existam resgistros orfãos nas Entrdas
+        return await Entrada_Estoque.destroy({
+            where: {
+                id_produto: id_produto
+            }
+        });
     }
 };
 
