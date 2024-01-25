@@ -17,14 +17,14 @@
 <table>
 <tr>
 <td>
-Este progeto é um CRUD básico feito em nodeJS e SQL utilizando bibliotecas como sequelize e express, além de utilizar postman para testar a API
+Este projeto é um CRUD básico feito em nodeJS e SQL utilizando bibliotecas como sequelize e express, além de utilizar postman para testar a API
 </td>
 </tr>
 </table>
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+Para clonar essa aplicação você vai precisar [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
