@@ -9,7 +9,7 @@ Este projeto é um CRUD básico feito em nodeJS e SQL utilizando bibliotecas com
 
 ## How To Use
 
-Para clonar essa aplicação você vai precisar [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/download/) ( com [npm](http://npmjs.com)) instalado em seu computador. Utilizando os seguintes comandos:
+Para clonar essa aplicação você vai precisar [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/download/) ( com [npm](http://npmjs.com)) instalado em seu computador. Após isso execute os seguintes comandos:
 
 ```bash
 # Clone this repository
