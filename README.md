@@ -1,19 +1,4 @@
 # ControleDeEstoqueApi
- </p>
-  <p>
-  <a href="https://github.com/Ariel-Alejandr0/ControleDeEstoqueApi/graphs/contributors">
-    <img src="https://img.shields.io/github/contributorsAriel-Alejandr0/ControleDeEstoqueApi/" alt="contributors" />
-  </a>
-  <a href="">
-    <img src="https://img.shields.io/github/last-commit/Ariel-Alejandr0/ControleDeEstoqueApi/" alt="last update" />
-  </a>
-  <a href="https://github.comAriel-Alejandr0/ControleDeEstoqueApi/network/members">
-    <img src="https://img.shields.io/github/forks/Ariel-Alejandr0/ControleDeEstoqueApi/" alt="forks" />
-  </a>
-  <a href="https://github.com/Ariel-Alejandr0/ControleDeEstoqueApi/stargazers">
-    <img src="https://img.shields.io/github/stars/Ariel-Alejandr0/ControleDeEstoqueApi/" alt="stars" />
-  </a>
-</p>
 <table>
 <tr>
 <td>
