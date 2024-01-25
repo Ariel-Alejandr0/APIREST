@@ -40,16 +40,13 @@ $ npm install
 $ node app.js
 ```
 
-> **Note**
-> If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
-
 ## Built with 
 
-- [Cloud-Firestore](https://firebase.google.com/docs/firestore) - Flexible, scalable database.
+- [mysql](https://www.mysql.com/) - Flexible, scalable database.
 - [Node](https://nodejs.org/en) -  JavaScript runtime environment.
 
 ## Acknowledgments
 
-* [Eduardo](https://github.com/Ariel-Alejandr0/)
+* [Ariel](https://github.com/Ariel-Alejandr0/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
