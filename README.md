@@ -7,7 +7,7 @@ Este projeto é um CRUD básico feito em nodeJS e SQL utilizando bibliotecas com
 </tr>
 </table>
 
-## How To Use
+## Como usar
 
 Para clonar essa aplicação você vai precisar [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/download/) ( com [npm](http://npmjs.com)) instalado em seu computador. Após isso execute os seguintes comandos:
 
