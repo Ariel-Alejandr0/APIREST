@@ -24,14 +24,14 @@ Este projeto é um CRUD básico feito em nodeJS e SQL utilizando bibliotecas com
 
 ## How To Use
 
-Para clonar essa aplicação você vai precisar [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+Para clonar essa aplicação você vai precisar [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/download/) ( com [npm](http://npmjs.com)) instalado em seu computador. Utilizando os seguintes comandos:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/edegan-furb/Entra21-Node.git
+$ git clone https://github.com/Ariel-Alejandr0/ControleDeEstoqueApi.git
 
 # Go into the repository
-$ cd Entra21-Node
+$ cd ControleDeEstoqueApi
 
 # Install dependencies
 $ npm install
@@ -50,6 +50,6 @@ $ node app.js
 
 ## Acknowledgments
 
-* [Eduardo](https://github.com/edegan-furb)
+* [Eduardo](https://github.com/Ariel-Alejandr0/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
