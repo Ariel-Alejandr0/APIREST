@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id_produto\": 11,\r\n    \"nome_produto\": \"Erva-mate Rosamonte\",\r\n    \"descricao\": \"Erva-mate Rosamonte padrão argentino 500g\",\r\n    \"preco_unitario\": \"24.00\",\r\n    \"estoque_minimo\": \"70\"\r\n}",
+							"raw": "[\r\n    {\r\n        \"id_produto\": 1,\r\n        \"nome_produto\": \"Cuia Mate in Box Clássica\",\r\n        \"descricao\": \"Cuia de chimarrão Mate in Box feito de inox\",\r\n        \"preco_unitario\": \"80.00\",\r\n        \"estoque_minimo\": 17\r\n    },\r\n    {\r\n        \"id_produto\": 2,\r\n        \"nome_produto\": \"Erva-mate Mate Guayrá 500g\",\r\n        \"descricao\": \"Moída Grossa | Orgânica & Agroflorestal | 500g\",\r\n        \"preco_unitario\": \"20.00\",\r\n        \"estoque_minimo\": 28\r\n    },\r\n    {\r\n        \"id_produto\": 3,\r\n        \"nome_produto\": \"Erva-mate Baita 1Kg\",\r\n        \"descricao\": \"Chimarrão, pacote a vácuo 1kg \",\r\n        \"preco_unitario\": \"18.00\",\r\n        \"estoque_minimo\": 20\r\n    },\r\n    {\r\n        \"id_produto\": 4,\r\n        \"nome_produto\": \"Erva-mate Canarias 500g\",\r\n        \"descricao\": \"Erva mate tipo uruguaia , pacote 500g\",\r\n        \"preco_unitario\": \"14.00\",\r\n        \"estoque_minimo\": 21\r\n    },\r\n    {\r\n        \"id_produto\": 5,\r\n        \"nome_produto\": \"Trot’s Supreme FITX 500g\",\r\n        \"descricao\": \"Erva mate de Tererê extra grossa, pacote 500g\",\r\n        \"preco_unitario\": \"20.00\",\r\n        \"estoque_minimo\": 70\r\n    },\r\n    {\r\n        \"id_produto\": 6,\r\n        \"nome_produto\": \"Copo Termico de Cerveja\",\r\n        \"descricao\": \"Copo Termico 500ml Preto Black Sand Arell\",\r\n        \"preco_unitario\": \"140.00\",\r\n        \"estoque_minimo\": 32\r\n    },\r\n    {\r\n        \"id_produto\": 7,\r\n        \"nome_produto\": \"Copo Inox para Tereré Quadrado\",\r\n        \"descricao\": \"Copo Inox para Tereré Quadrado 200ml preto\",\r\n        \"preco_unitario\": \"60.00\",\r\n        \"estoque_minimo\": 80\r\n    },\r\n    {\r\n        \"id_produto\": 8,\r\n        \"nome_produto\": \"Bomba Mil Furos\",\r\n        \"descricao\": \"Bomba Mil Furos, Bocal Banhado a Ouro, Desmontável\",\r\n        \"preco_unitario\": \"100.00\",\r\n        \"estoque_minimo\": 90\r\n    },\r\n    {\r\n        \"id_produto\": 9,\r\n        \"nome_produto\": \"Bomba Inox Chata com cano largo\",\r\n        \"descricao\": \"Bomba Inox Chata com cano largo para tereré 19cm\",\r\n        \"preco_unitario\": \"23.00\",\r\n        \"estoque_minimo\": 91\r\n    },\r\n    {\r\n        \"id_produto\": 10,\r\n        \"nome_produto\": \"Yerba mate Taragui\",\r\n        \"descricao\": \"Yerba mate Taragui padrão argentino 500g\",\r\n        \"preco_unitario\": \"27.00\",\r\n        \"estoque_minimo\": 92\r\n    },\r\n    {\r\n        \"id_produto\": 11,\r\n        \"nome_produto\": \"Erva-mate Rosamonte\",\r\n        \"descricao\": \"Erva-mate Rosamonte padrão argentino 500g\",\r\n        \"preco_unitario\": \"24.00\"\r\n    }\r\n]",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -115,7 +115,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/produtos/10",
+							"raw": "http://localhost:3000/api/produtos/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -124,7 +124,7 @@
 							"path": [
 								"api",
 								"produtos",
-								"10"
+								"3"
 							]
 						}
 					},
@@ -142,7 +142,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id_produto\": 7,\r\n    \"quantidade\": 10,\r\n    \"data_entrada\": \"2023-11-10\"\r\n} \r\n ",
+							"raw": "[\r\n    {\r\n        \"id_entrada\": 1,\r\n        \"id_produto\": 10,\r\n        \"quantidade\": 60,\r\n        \"data_entrada\": \"2023-11-23\"\r\n    },\r\n    {\r\n        \"id_entrada\": 2,\r\n        \"id_produto\": 1,\r\n        \"quantidade\": 5,\r\n        \"data_entrada\": \"2023-11-22\"\r\n    },\r\n    {\r\n        \"id_entrada\": 4,\r\n        \"id_produto\": 2,\r\n        \"quantidade\": 35,\r\n        \"data_entrada\": \"2023-11-23\"\r\n    },\r\n    {\r\n        \"id_entrada\": 6,\r\n        \"id_produto\": 4,\r\n        \"quantidade\": 60,\r\n        \"data_entrada\": \"2023-11-23\"\r\n    },\r\n    {\r\n        \"id_entrada\": 7,\r\n        \"id_produto\": 5,\r\n        \"quantidade\": 10,\r\n        \"data_entrada\": \"2023-11-23\"\r\n    },\r\n    {\r\n        \"id_entrada\": 8,\r\n        \"id_produto\": 6,\r\n        \"quantidade\": 20,\r\n        \"data_entrada\": \"2023-11-23\"\r\n    },\r\n    {\r\n        \"id_entrada\": 9,\r\n        \"id_produto\": 7,\r\n        \"quantidade\": 5,\r\n        \"data_entrada\": \"2023-11-23\"\r\n    },\r\n    {\r\n        \"id_entrada\": 10,\r\n        \"id_produto\": 9,\r\n        \"quantidade\": 10,\r\n        \"data_entrada\": \"2023-11-23\"\r\n    },\r\n    {\r\n        \"id_entrada\": 14,\r\n        \"id_produto\": 10,\r\n        \"quantidade\": 6,\r\n        \"data_entrada\": \"2023-11-15\"\r\n    },\r\n    {\r\n        \"id_entrada\": 15,\r\n        \"id_produto\": 10,\r\n        \"quantidade\": 25,\r\n        \"data_entrada\": \"2023-11-16\"\r\n    },\r\n    {\r\n        \"id_entrada\": 16,\r\n        \"id_produto\": 5,\r\n        \"quantidade\": 5,\r\n        \"data_entrada\": \"2023-11-15\"\r\n    },\r\n    {\r\n        \"id_entrada\": 17,\r\n        \"id_produto\": 5,\r\n        \"quantidade\": 8,\r\n        \"data_entrada\": \"2023-11-16\"\r\n    },\r\n    {\r\n        \"id_entrada\": 18,\r\n        \"id_produto\": 5,\r\n        \"quantidade\": 96,\r\n        \"data_entrada\": \"2023-11-17\"\r\n    },\r\n    {\r\n        \"id_entrada\": 19,\r\n        \"id_produto\": 2,\r\n        \"quantidade\": 97,\r\n        \"data_entrada\": \"2023-11-15\"\r\n    },\r\n    {\r\n        \"id_entrada\": 20,\r\n        \"id_produto\": 2,\r\n        \"quantidade\": 14,\r\n        \"data_entrada\": \"2023-11-16\"\r\n    },\r\n    {\r\n        \"id_entrada\": 21,\r\n        \"id_produto\": 2,\r\n        \"quantidade\": 4,\r\n        \"data_entrada\": \"2023-11-17\"\r\n    },\r\n    {\r\n        \"id_entrada\": 22,\r\n        \"id_produto\": 7,\r\n        \"quantidade\": 1,\r\n        \"data_entrada\": \"2023-11-15\"\r\n    },\r\n    {\r\n        \"id_entrada\": 23,\r\n        \"id_produto\": 10,\r\n        \"quantidade\": 6,\r\n        \"data_entrada\": \"2023-11-16\"\r\n    },\r\n    {\r\n        \"id_entrada\": 24,\r\n        \"id_produto\": 10,\r\n        \"quantidade\": 2,\r\n        \"data_entrada\": \"2023-11-17\"\r\n    },\r\n    {\r\n        \"id_entrada\": 25,\r\n        \"id_produto\": 10,\r\n        \"quantidade\": 8,\r\n        \"data_entrada\": \"2023-11-17\"\r\n    }\r\n]",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -242,7 +242,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/entrada_estoque/26",
+							"raw": "http://localhost:3000/api/entrada_estoque/18",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -251,7 +251,7 @@
 							"path": [
 								"api",
 								"entrada_estoque",
-								"26"
+								"18"
 							]
 						}
 					},
@@ -263,7 +263,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/entrada_estoque/26",
+							"raw": "http://localhost:3000/api/entrada_estoque/18",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -272,7 +272,7 @@
 							"path": [
 								"api",
 								"entrada_estoque",
-								"26"
+								"18"
 							]
 						}
 					},
@@ -290,7 +290,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id_produto\": 3,\n    \"quantidade\": 2,\n    \"data_saida\": \"2023-12-5\"\n}",
+							"raw": "[\n    {\n        \"id_saida\": 1,\n        \"id_produto\": 1,\n        \"quantidade\": 2,\n        \"data_saida\": \"2023-11-23\"\n    },\n    {\n        \"id_saida\": 2,\n        \"id_produto\": 2,\n        \"quantidade\": 15,\n        \"data_saida\": \"2023-11-23\"\n    },\n    {\n        \"id_saida\": 4,\n        \"id_produto\": 4,\n        \"quantidade\": 35,\n        \"data_saida\": \"2023-11-23\"\n    },\n    {\n        \"id_saida\": 5,\n        \"id_produto\": 5,\n        \"quantidade\": 6,\n        \"data_saida\": \"2023-11-23\"\n    },\n    {\n        \"id_saida\": 6,\n        \"id_produto\": 6,\n        \"quantidade\": 2,\n        \"data_saida\": \"2023-11-23\"\n    },\n    {\n        \"id_saida\": 7,\n        \"id_produto\": 7,\n        \"quantidade\": 1,\n        \"data_saida\": \"2023-11-23\"\n    },\n    {\n        \"id_saida\": 8,\n        \"id_produto\": 9,\n        \"quantidade\": 3,\n        \"data_saida\": \"2023-11-23\"\n    },\n    {\n        \"id_saida\": 9,\n        \"id_produto\": 10,\n        \"quantidade\": 31,\n        \"data_saida\": \"2023-11-23\"\n    },\n    {\n        \"id_saida\": 10,\n        \"id_produto\": 10,\n        \"quantidade\": 38,\n        \"data_saida\": \"2023-11-15\"\n    },\n    {\n        \"id_saida\": 11,\n        \"id_produto\": 10,\n        \"quantidade\": 25,\n        \"data_saida\": \"2023-11-16\"\n    },\n    {\n        \"id_saida\": 12,\n        \"id_produto\": 10,\n        \"quantidade\": 4,\n        \"data_saida\": \"2023-11-17\"\n    },\n    {\n        \"id_saida\": 13,\n        \"id_produto\": 5,\n        \"quantidade\": 17,\n        \"data_saida\": \"2023-11-15\"\n    },\n    {\n        \"id_saida\": 14,\n        \"id_produto\": 5,\n        \"quantidade\": 4,\n        \"data_saida\": \"2023-11-16\"\n    },\n    {\n        \"id_saida\": 15,\n        \"id_produto\": 5,\n        \"quantidade\": 14,\n        \"data_saida\": \"2023-11-17\"\n    },\n    {\n        \"id_saida\": 16,\n        \"id_produto\": 2,\n        \"quantidade\": 1,\n        \"data_saida\": \"2023-11-15\"\n    },\n    {\n        \"id_saida\": 17,\n        \"id_produto\": 2,\n        \"quantidade\": 14,\n        \"data_saida\": \"2023-11-16\"\n    },\n    {\n        \"id_saida\": 18,\n        \"id_produto\": 2,\n        \"quantidade\": 2,\n        \"data_saida\": \"2023-11-17\"\n    },\n    {\n        \"id_saida\": 19,\n        \"id_produto\": 7,\n        \"quantidade\": 1,\n        \"data_saida\": \"2023-11-15\"\n    },\n    {\n        \"id_saida\": 20,\n        \"id_produto\": 10,\n        \"quantidade\": 3,\n        \"data_saida\": \"2023-11-16\"\n    },\n    {\n        \"id_saida\": 21,\n        \"id_produto\": 10,\n        \"quantidade\": 2,\n        \"data_saida\": \"2023-11-17\"\n    }\n]",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -359,7 +359,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/saida_estoque/saida_produto/3",
+							"raw": "http://localhost:3000/api/saida_estoque/saida_produto/10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -369,7 +369,7 @@
 								"api",
 								"saida_estoque",
 								"saida_produto",
-								"3"
+								"10"
 							]
 						}
 					},
@@ -411,7 +411,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/saida_estoque/22",
+							"raw": "http://localhost:3000/api/saida_estoque/19",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -420,7 +420,7 @@
 							"path": [
 								"api",
 								"saida_estoque",
-								"22"
+								"19"
 							]
 						}
 					},
