@@ -5,7 +5,7 @@ const Saida_Estoque = require('../models/Saida_Estoque');
 const ProdutoController = {
     createProduto: async (req, res) => { // Cria um produto
         try {
-            const novoProduto = await Produto.create(req.body);
+            const novoProduto = await Produto.bulkCreate(req.body);
             res.json(novoProduto);
         } catch (error) {
             res.status(500).send(error.message);

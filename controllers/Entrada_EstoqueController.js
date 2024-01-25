@@ -4,7 +4,7 @@ const Entrada_Estoque = require('../models/Entrada_Estoque');
 const EntradasController = {
     createEntrada: async (req, res) => { //cria uma entrada
         try {
-            const novaEntrada = await Entrada_Estoque.create(req.body);
+            const novaEntrada = await Entrada_Estoque.bulkCreate(req.body);
             res.json(novaEntrada); 
         } catch (error) {
             res.status(500).send(error.message);

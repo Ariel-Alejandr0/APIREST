@@ -5,16 +5,22 @@ const { Op } = require('sequelize')
 const SaidaController = {
     createSaida: async (req, res) => { //criar uma saida de estoque
         try {
-            const id_produto = req.body.id_produto
-            const saldoAtual = await SaidaController.calculaEstoque(id_produto) - req.body.quantidade
+            const requesicao = req.body
             
-            if (saldoAtual >= 0){ // impede que a saida seja maior o que a quantiade no estoque
-                const novaSaida = await Saida_Estoque.create(req.body);
-                res.json(novaSaida);
-            } else {
-                res.send(`Não foi possível completar a operação, Saldo atual do produto: ${saldoAtual}`)
-            }
+            const resultados = await Promise.all(requesicao.map(async registro => { //espera todas as funçoes assincornas no loop para depois continuar
+                const id_produto = registro.id_produto;
+                const saldoAtual = await SaidaController.calculaEstoque(id_produto);
+                
+                if (saldoAtual >= registro.quantidade){ // impede que a saida seja maior o que a quantiade no estoque
+                    const novaSaida = await Saida_Estoque.create(registro);
+                    return novaSaida;
+                } else {
+                    throw new Error(`Não foi possível completar a operação ${registro.id_saida}, Saldo atual do produto ${id_produto}: ${saldoAtual}`);
+                } 
+            }));
             
+            res.json(resultados);
+
         } catch(error) {
             res.status(500).send(error.message);
         }
@@ -83,20 +89,27 @@ const SaidaController = {
         }
     },
     calculaEstoque: async (id_produto) => { // veirifica o saldo atual do produto
-        const totalEntradas = await Entrada_Estoque.sum('quantidade', {
+        let totalEntradas = await Entrada_Estoque.sum('quantidade', { //calcula o total de entradas
             where: {
                 id_produto: {
                     [Op.eq]: id_produto
                 }
             }
         });
-        const totalSaidas = await Saida_Estoque.sum('quantidade', {
+        let totalSaidas = await Saida_Estoque.sum('quantidade', {//calcula o total de saidas
             where: {
                 id_produto: {
                     [Op.eq]: id_produto
                 }
             }
         });
+        if(totalEntradas === null) {
+            totalEntradas = 0;
+        }
+        if(totalSaidas === null) {
+            totalSaidas = 0;
+        }
+
         return totalEntradas - totalSaidas;
     }
 }
