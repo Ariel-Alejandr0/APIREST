@@ -2,7 +2,7 @@
 <table>
 <tr>
 <td>
-Este projeto é um CRUD básico feito em nodeJS e SQL utilizando bibliotecas como sequelize e express, além de utilizar postman para testar a API
+Este projeto é um CRUD básico feito em NodeJS e MySQL utilizando bibliotecas como sequelize e express, além de utilizar postman para testar a API
 </td>
 </tr>
 </table>
