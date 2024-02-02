@@ -22,7 +22,8 @@ Este projeto é um CRUD básico feito em nodeJS e SQL utilizando bibliotecas com
 </tr>
 </table>
 
-## Funcionalidades / Métodos
+
+## 🛠️ Funcionalidades / Métodos
 ### `POST`
   - Este método serve para criar registros de produtos, entradas e saídas de estoque, salvando-os no banco de dados.
 
@@ -30,8 +31,16 @@ Este projeto é um CRUD básico feito em nodeJS e SQL utilizando bibliotecas com
   - Este método é utilizado para buscar informações no banco de dados, exemplos destes métodos na apliacação são:
     - Obter Todos os Produtos / Entradas / Saidas;
     - Obter Produto / Entrada / Saida por Id;
-    - Obter Entrada / Saída pelo Id do Produto;
-## ⚙️Como usar
+    - Obter Entradas / Saídas pelo Id do Produto.
+
+### `PUT`
+  - Este método atualiza um registro nas Tabelas Produtos / Entradas_Estoque / Saidas_Estoque através da Primary Key.
+
+### `DELETE`
+  - Este método deleta um registro nas Tabelas Produtos / Entradas_Estoque / Saidas_Estoque através da Primary Key.
+
+
+## ⚙️ Como usar
 
 Para clonar essa aplicação você vai precisar [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/download/) ( com [npm](http://npmjs.com)) instalados em seu computador. Após isso execute os seguintes comandos:
 
