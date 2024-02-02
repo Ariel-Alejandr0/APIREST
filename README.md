@@ -22,9 +22,14 @@ Este projeto é um CRUD básico feito em nodeJS e SQL utilizando bibliotecas com
 </tr>
 </table>
 
-## Como usar
+## Funcionalidades / Métodos
+### `POST`
+  - Este método serve para criar registros de produtos, entradas e saídas de estoque, salvando-os no banco de dados.
 
-Para clonar essa aplicação você vai precisar [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/download/) ( com [npm](http://npmjs.com)) instalado em seu computador. Após isso execute os seguintes comandos:
+
+## ⚙️Como usar
+
+Para clonar essa aplicação você vai precisar [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/download/) ( com [npm](http://npmjs.com)) instalados em seu computador. Após isso execute os seguintes comandos:
 
 ```bash
 # Clone this repository
@@ -40,12 +45,12 @@ $ npm install
 $ node app.js
 ```
 
-## Built with 
+## Feito com
 
 - [mysql](https://www.mysql.com/) - Flexible, scalable database.
 - [Node](https://nodejs.org/en) -  JavaScript runtime environment.
 
-## Acknowledgments
+## 🙇‍♂️Agradecimentos
 
 * [Ariel](https://github.com/Ariel-Alejandr0/)
 
